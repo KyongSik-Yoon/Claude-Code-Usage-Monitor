@@ -36,13 +36,13 @@ Claude Code Usage Monitor is a Python-based terminal application that provides r
 uv build
 
 # Build and install locally
-uv build && uv pip install dist/*.whl --force-reinstall
+uv build && uv pip install dist/*.whl --force-reinstall --link-mode=copy
 
 # Development installation
-uv pip install -e .
+uv pip install -e . --link-mode=copy
 
 # Install dependencies
-uv pip install pytz
+uv pip install pytz --link-mode=copy
 npm install -g ccusage
 
 # Using justfile (if available)

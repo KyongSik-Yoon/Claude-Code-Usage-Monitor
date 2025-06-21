@@ -13,14 +13,14 @@ check-uv:
 # 의존성 설치
 install: check-uv
     @echo "📦 의존성 설치 중..."
-    uv pip install pytz
+    uv pip install pytz --link-mode=copy
     npm install -g ccusage
 
 # 개발 환경 설정
 dev-setup: check-uv
     @echo "🔧 개발 환경 설정 중..."
     uv venv
-    uv pip install -e .
+    uv pip install -e . --link-mode=copy
     uv pip install pytz
     npm install -g ccusage
 
@@ -32,7 +32,7 @@ build: check-uv clean
 # 로컬 설치
 install-local: build
     @echo "📥 로컬 설치 중..."
-    uv pip install dist/*.whl --force-reinstall
+    uv pip install dist/*.whl --force-reinstall --link-mode=copy
 
 # 테스트
 test: install-local

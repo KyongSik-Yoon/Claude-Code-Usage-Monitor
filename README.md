@@ -64,7 +64,7 @@ git clone https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor.git
 cd Claude-Code-Usage-Monitor
 
 # One-command build and install
-uv build && uv pip install dist/*.whl
+uv build && uv pip install dist/*.whl --link-mode=copy
 
 # Install dependencies
 npm install -g ccusage
