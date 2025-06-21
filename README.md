@@ -51,19 +51,40 @@ A beautiful real-time terminal monitoring tool for Claude AI token usage. Track 
 
 ## 🚀 Installation
 
-### ⚡ Quick Start
+### ⚡ Quick Start with uv (Recommended)
 
-For immediate testing (not recommended for regular use):
+For modern Python development with uv:
 
 ```bash
-# Install dependencies
-npm install -g ccusage
-pip install pytz
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Clone and run
+# Clone and setup
 git clone https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor.git
 cd Claude-Code-Usage-Monitor
-python ccusage_monitor.py
+
+# One-command build and install
+uv build && uv pip install dist/*.whl
+
+# Install dependencies
+npm install -g ccusage
+
+# Run
+claude-usage-monitor
+```
+
+### ⚡ Even Simpler with just
+
+If you have [just](https://github.com/casey/just) installed:
+
+```bash
+# One command to rule them all
+just full-build
+
+# Or step by step
+just install     # Install dependencies
+just build       # Build package
+just test        # Test installation
 ```
 
 ### 🔒 Production Setup (Recommended)
